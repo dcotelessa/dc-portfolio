@@ -14,9 +14,13 @@ export function Model(props) {
   const modelRef = useRef();
 
   const zBounce = bounce(50);
+  const spinBounce = bounce(50, 0.25, 3);
 
   useFrame(({ clock }) => {
-    modelRef.current.rotation.z = Math.cos(clock.getElapsedTime()) * 0.5;
+    modelRef.current.rotation.z =
+      (spinBounce.getPosition(clock.getElapsedTime() * 5) +
+        Math.cos(clock.getElapsedTime()) * 0.5) /
+      2;
     modelRef.current.position.z = zBounce.getPosition(clock.getElapsedTime());
   });
 

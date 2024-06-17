@@ -1,6 +1,8 @@
-export function bounce(amplitude) {
-  let dampingCoefficient = 0.95; // Damping coefficient (adjust to get desired damping effect)
-  let angularFrequency = 8; // Angular frequency (change to adjust oscillation speed)
+export function bounce(
+  amplitude,
+  dampingCoefficient = 0.95,
+  angularFrequency = 8,
+) {
   let phase = 0; // Phase (can be set to 0 or adjust as needed)
 
   function getPosition(t) {
