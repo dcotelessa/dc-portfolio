@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { bounce } from "../../utils/bounce";
+import { getHovered } from "../../store/store";
 
 export function Model(props) {
   const { nodes: blueNodes, materials: blueMaterials } = useGLTF(

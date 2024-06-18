@@ -10,6 +10,7 @@
   --sunshine: 255, 253, 55;
   --golden-foil: 204, 201, 0;
   --black: 15, 18, 25;
+  --white: 255, 255, 255;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
@@ -44,13 +45,9 @@ body {
   font-size: 20px;
   line-height: 1.7;
 }
-header {
-  width: 100vw;
-  height: 10vh;
-}
 main {
   width: 100vw;
-  height: 71vh;
+  height: 82vh;
   padding: 0 1em;
   background: radial-gradient(
     rgb(var(--sunshine)) 30%,
@@ -59,7 +56,7 @@ main {
 }
 footer {
   width: 100vw;
-  height: 19vh;
+  height: 18vh;
 }
 h1,
 h2,

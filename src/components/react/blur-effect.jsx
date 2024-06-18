@@ -1,12 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
+import { getHovered } from "../../store/store";
 
-export const BlurEffect = ({ isHovered }) => {
+export const BlurEffect = () => {
   const bokehScaleFactor = 12;
   const depthOfFieldRef = useRef();
   const [targetBokehScale, setTargetBokehScale] = useState(0);
   const [currentBokehScale, setCurrentBokehScale] = useState(0);
+  const [isHovered, setHovered] = useState(false);
 
   useEffect(() => {
     if (isHovered) {
@@ -28,6 +30,8 @@ export const BlurEffect = ({ isHovered }) => {
       );
     }
     depthOfFieldRef.current.bokehScale = currentBokehScale * bokehScaleFactor;
+
+    setHovered(getHovered());
   });
 
   return (
